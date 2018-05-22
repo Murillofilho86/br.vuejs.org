@@ -1,18 +1,18 @@
 ---
-title: Adding Instance Properties
+title: Adicionando Propriedades da Instância
 type: cookbook
 order: 2
 ---
 
-## Base Example
+## Exemplo Base
 
-There may be data/utilities you'd like to use in many components, but you don't want to [pollute the global scope](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md). In these cases, you can make them available to each Vue instance by defining them on the prototype:
+Pode haver dados/utilitários que você gostaria de usar em alguns componentes, mas você nõa vai querer [poluir o scopo global](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md). Nesses casos, você pode disponibilizalos para cada instância do Vue definindo-os como protótipo:
 
 ```js
 Vue.prototype.$appName = 'My App'
 ```
 
-Now `$appName` is available on all Vue instances, even before creation. If we run:
+Agora `$appName` é acessível em toda as instâncias do Vue, mesmo antes da criação. Se rodarmos:
 
 ```js
 new Vue({
