@@ -22,32 +22,32 @@ new Vue({
 })
 ```
 
-Then `"My App"` will be logged to the console!
+Então `"My App"` será registrado no console!
 
-## The Importance of Scoping Instance Properties
+## A importância das propriedades da instancia de escopo
 
-You may be wondering:
+Você pode estar se perguntando:
 
-> "Why does `appName` start with `$`? Is that important? What does it do?
+> "Porque `appName` começa com `$`? Isso é importante? O que ele faz?
 
-No magic is happening here. `$` is a convention Vue uses for properties that are available to all instances. This avoids conflicts with any defined data, computed properties, or methods.
+Nenhuma magica acontecendo aqui. `$` é uma convenção do Vue usada para propriedades que estão disponíveis para todas as instancias. Isso evita conflitos com quaisquer dados definido, propriedades computadas, ou métodos.
 
-> "Conflicts? What do you mean?"
+> "Conflitos? O que você quer dizer?"
 
-Another great question! If you set:
+Outra ótima pergunta! Se você definir:
 
 ```js
 Vue.prototype.appName = 'My App'
 ```
 
-Then what would you expect to be logged below?
+Então o que você esperaria mostrar abaixo?
 
 ```js
 new Vue({
   data: {
-    // Uh oh - appName is *also* the name of the
-    // instance property we defined!
-    appName: 'The name of some other app'
+    // Uh oh - appName é *também* o nome da 
+    // instancia da propriedade que definimos!
+    appName: 'O nome de algum outro App'
   },
   beforeCreate: function() {
     console.log(this.appName)
